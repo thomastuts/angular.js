@@ -84,7 +84,7 @@ Before you submit your pull request consider the following guidelines:
 
 * Search [GitHub](https://github.com/angular/angular.js/pulls) for an open or closed Pull Request
   that relates to your submission. You don't want to duplicate effort.
-* Please sign our [Contributor License Agreement (CLA)](#signing-the-cla) before sending pull
+* Please sign our [Contributor License Agreement (CLA)](#cla) before sending pull
   requests. We cannot accept code without this.
 * Make your changes in a new git branch
 
@@ -93,7 +93,7 @@ Before you submit your pull request consider the following guidelines:
      ```
 
 * Create your patch, **including appropriate test cases**.
-* Follow our [Coding Rules](#coding-rules).
+* Follow our [Coding Rules](#rules).
 * Run the full Angular test suite, as described in the [developer documentation][dev-doc],
   and ensure that all tests pass.
 * Commit your changes using a descriptive commit message that follows our
