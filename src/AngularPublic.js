@@ -134,6 +134,7 @@ function publishExternalAPI(angular){
   });
 
   angularModule = setupModuleLoader(window);
+
   try {
     angularModule('ngLocale');
   } catch (e) {
@@ -146,52 +147,54 @@ function publishExternalAPI(angular){
       $provide.provider({
         $$sanitizeUri: $$SanitizeUriProvider
       });
-      $provide.provider('$compile', $CompileProvider).
-        directive({
-            a: htmlAnchorDirective,
-            input: inputDirective,
-            textarea: inputDirective,
-            form: formDirective,
-            script: scriptDirective,
-            select: selectDirective,
-            style: styleDirective,
-            option: optionDirective,
-            ngBind: ngBindDirective,
-            ngBindHtml: ngBindHtmlDirective,
-            ngBindTemplate: ngBindTemplateDirective,
-            ngClass: ngClassDirective,
-            ngClassEven: ngClassEvenDirective,
-            ngClassOdd: ngClassOddDirective,
-            ngCloak: ngCloakDirective,
-            ngController: ngControllerDirective,
-            ngForm: ngFormDirective,
-            ngHide: ngHideDirective,
-            ngIf: ngIfDirective,
-            ngInclude: ngIncludeDirective,
-            ngInit: ngInitDirective,
-            ngNonBindable: ngNonBindableDirective,
-            ngPluralize: ngPluralizeDirective,
-            ngRepeat: ngRepeatDirective,
-            ngShow: ngShowDirective,
-            ngStyle: ngStyleDirective,
-            ngSwitch: ngSwitchDirective,
-            ngSwitchWhen: ngSwitchWhenDirective,
-            ngSwitchDefault: ngSwitchDefaultDirective,
-            ngOptions: ngOptionsDirective,
-            ngTransclude: ngTranscludeDirective,
-            ngModel: ngModelDirective,
-            ngList: ngListDirective,
-            ngChange: ngChangeDirective,
-            required: requiredDirective,
-            ngRequired: requiredDirective,
-            ngValue: ngValueDirective,
-            ngModelOptions: ngModelOptionsDirective
-        }).
-        directive({
+
+      $provide.provider('$compile', $CompileProvider)
+        .directive({
+          a: htmlAnchorDirective,
+          input: inputDirective,
+          textarea: inputDirective,
+          form: formDirective,
+          script: scriptDirective,
+          select: selectDirective,
+          style: styleDirective,
+          option: optionDirective,
+          ngBind: ngBindDirective,
+          ngBindHtml: ngBindHtmlDirective,
+          ngBindTemplate: ngBindTemplateDirective,
+          ngClass: ngClassDirective,
+          ngClassEven: ngClassEvenDirective,
+          ngClassOdd: ngClassOddDirective,
+          ngCloak: ngCloakDirective,
+          ngController: ngControllerDirective,
+          ngForm: ngFormDirective,
+          ngHide: ngHideDirective,
+          ngIf: ngIfDirective,
+          ngInclude: ngIncludeDirective,
+          ngInit: ngInitDirective,
+          ngNonBindable: ngNonBindableDirective,
+          ngPluralize: ngPluralizeDirective,
+          ngRepeat: ngRepeatDirective,
+          ngShow: ngShowDirective,
+          ngStyle: ngStyleDirective,
+          ngSwitch: ngSwitchDirective,
+          ngSwitchWhen: ngSwitchWhenDirective,
+          ngSwitchDefault: ngSwitchDefaultDirective,
+          ngOptions: ngOptionsDirective,
+          ngTransclude: ngTranscludeDirective,
+          ngModel: ngModelDirective,
+          ngList: ngListDirective,
+          ngChange: ngChangeDirective,
+          required: requiredDirective,
+          ngRequired: requiredDirective,
+          ngValue: ngValueDirective,
+          ngModelOptions: ngModelOptionsDirective
+        })
+        .directive({
           ngInclude: ngIncludeFillContentDirective
-        }).
-        directive(ngAttributeAliasDirectives).
-        directive(ngEventDirectives);
+        })
+        .directive(ngAttributeAliasDirectives)
+        .directive(ngEventDirectives);
+
       $provide.provider({
         $anchorScroll: $AnchorScrollProvider,
         $animate: $AnimateProvider,
@@ -217,7 +220,7 @@ function publishExternalAPI(angular){
         $timeout: $TimeoutProvider,
         $window: $WindowProvider,
         $$rAF: $$RAFProvider,
-        $$asyncCallback : $$AsyncCallbackProvider
+        $$asyncCallback: $$AsyncCallbackProvider
       });
     }
   ]);
